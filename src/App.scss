@@ -1,0 +1,6 @@
+@import "./styles/variables.scss";
+
+.appWrapper {
+	background: $mainBackgroundColor;
+	min-height: 832px;
+}
