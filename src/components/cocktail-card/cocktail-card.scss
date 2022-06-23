@@ -3,20 +3,19 @@
 .coctailCard {
 	min-height: 425px;
 	min-width: 200px;
+	max-width: 350px;
 	border-radius: 4rem;
 	padding: 3rem 4rem;
 	background-color: #44414e;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	background-image: url("../../assets/images/cocktail1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 
-	&__image {
-		width: 100%;
-		height: 100%;
-		object-fit: fill;
-	}
-
-	&__badge {
+	.badge {
 		border-radius: 3rem;
 		display: flex;
 		flex-direction: column;
@@ -26,11 +25,11 @@
 		width: 10rem;
 		height: 10rem;
 
-		&_title {
+		&__title {
 			font-weight: 700;
 			font-size: 3rem;
 		}
-		&_subtitle {
+		&__subtitle {
 			font-weight: 300;
 			font-size: 14px;
 		}

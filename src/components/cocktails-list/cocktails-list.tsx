@@ -26,6 +26,13 @@ const mockCoctails = [
 		alcohol: 50,
 		image: "../../assets/images/cocktail3.jpg",
 	},
+	{
+		id: 4,
+		title: "Blackberry34",
+		description: "Освежающий напиток",
+		alcohol: 500,
+		image: "../../assets/images/cocktail3.jpg",
+	},
 ];
 
 export const CocktailsList = () => {
