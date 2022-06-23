@@ -1,6 +1,7 @@
 export interface ICocktail {
-  id: number;
-  title: string;
-  description: string;
-  alcohol: number;
+	id: number;
+	title: string;
+	description: string;
+	alcohol: number;
+	image: string;
 }

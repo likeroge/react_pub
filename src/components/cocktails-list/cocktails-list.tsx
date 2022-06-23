@@ -9,18 +9,22 @@ const mockCoctails = [
 		title: "Blackberry",
 		description: "Освежающий напиток",
 		alcohol: 30,
+		image: "../../assets/images/cocktail1.jpg",
 	},
 	{
 		id: 2,
 		title: "Blackberry2",
 		description: "Освежающий напиток",
 		alcohol: 10,
+		// image: "../../assets/images/cocktail2.jpg",
+		image: "cocktail2.jpg",
 	},
 	{
 		id: 3,
 		title: "Blackberry3",
 		description: "Освежающий напиток",
 		alcohol: 50,
+		image: "../../assets/images/cocktail3.jpg",
 	},
 ];
 
