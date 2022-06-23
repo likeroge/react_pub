@@ -5,6 +5,12 @@ import { ICocktail } from "./types";
 export const CocktailCard: FC<{ key: any; cocktail: ICocktail }> = ({ cocktail }) => {
 	return (
 		<div className="coctailCard">
+			<img
+				className="coctailCard__image"
+				src={require("../../assets/images/cocktail1.jpg")}
+				alt={`cocktail-${cocktail.title}`}
+			/>
+
 			<div className="badge">
 				<h1 className="badge__title">{cocktail.alcohol}%</h1>
 				<h2 className="badge__subtitle">Алкоголь</h2>

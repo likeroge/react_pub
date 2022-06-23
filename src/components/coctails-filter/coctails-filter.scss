@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 
 .cocktailsFilter {
+	z-index: 2;
 	position: fixed;
 	top: 113px;
 	width: 48rem;
