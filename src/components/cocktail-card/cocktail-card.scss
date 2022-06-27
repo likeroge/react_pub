@@ -1,10 +1,9 @@
 @import "../../styles/variables.scss";
 
-.coctailCard {
+.coctail-card {
 	position: relative;
-	min-height: 380px;
-	min-width: 250px;
-	max-width: 300px;
+	min-height: 425px;
+	min-width: calc(320px - 8rem);
 	width: 100%;
 	border-radius: 4rem;
 	padding: 3rem 4rem;
@@ -30,7 +29,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background-color: $deepDark;
+		background-color: $badgeColor;
 		width: 10rem;
 		height: 10rem;
 

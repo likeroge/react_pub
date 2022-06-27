@@ -9,14 +9,13 @@ const mockCoctails = [
 		title: "Blackberry",
 		description: "Освежающий напиток",
 		alcohol: 30,
-		image: "../../assets/images/cocktail1.jpg",
+		image: "cocktail1.jpg",
 	},
 	{
 		id: 2,
 		title: "Blackberry2",
 		description: "Освежающий напиток",
 		alcohol: 10,
-		// image: "../../assets/images/cocktail2.jpg",
 		image: "cocktail2.jpg",
 	},
 	{
@@ -24,14 +23,14 @@ const mockCoctails = [
 		title: "Blackberry3",
 		description: "Освежающий напиток",
 		alcohol: 50,
-		image: "../../assets/images/cocktail3.jpg",
+		image: "cocktail3.jpg",
 	},
 	{
 		id: 4,
 		title: "Blackberry34",
 		description: "Освежающий напиток",
 		alcohol: 500,
-		image: "../../assets/images/cocktail3.jpg",
+		image: "cocktail3.jpg",
 	},
 ];
 
@@ -39,7 +38,7 @@ export const CocktailsList = () => {
 	return (
 		<>
 			<CocktailsFilter />
-			<div className="cocktailsList">
+			<div className="cocktails-list">
 				{mockCoctails.map((cocktail) => (
 					<CocktailCard key={cocktail.id} cocktail={cocktail} />
 				))}

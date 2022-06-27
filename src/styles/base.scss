@@ -27,8 +27,9 @@ button {
 	border: none;
 	cursor: pointer;
 	background-color: $buttonColor;
-	outline: inherit;
+	outline: none;
 	color: $buttonTextColor;
+	-webkit-tap-highlight-color: transparent;
 	&:active {
 		background-color: $pressedButtonColor;
 		color: $pressedButtonTextColor;

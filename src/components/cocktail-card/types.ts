@@ -5,3 +5,8 @@ export interface ICocktail {
 	alcohol: number;
 	image: string;
 }
+
+export interface ICocktailCardProps {
+	key: any;
+	cocktail: ICocktail;
+}

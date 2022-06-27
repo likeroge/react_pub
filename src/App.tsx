@@ -7,7 +7,7 @@ import "./App.scss";
 
 function App() {
 	return (
-		<div className="appWrapper">
+		<div className="app-wrapper">
 			<Header />
 			<Main>
 				<CocktailsList />
