@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface ICocktail {
 	id: number;
 	title: string;
@@ -7,6 +9,6 @@ export interface ICocktail {
 }
 
 export interface ICocktailCardProps {
-	key: any;
+	key: React.Key;
 	cocktail: ICocktail;
 }
