@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+.header {
+	z-index: 2;
+	position: fixed;
+	background: $mainBackgroundColor;
+	top: 0;
+	width: 100%;
+	margin-bottom: 1rem;
+	&__container {
+		padding: 4rem;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 3rem;
+		line-height: 28px;
+		color: $textColor;
+	}
+	&__subtitle {
+		margin: 0;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 21px;
+		color: $secondaryTextColor;
+	}
+	&__text {
+		color: aquamarine;
+	}
+}

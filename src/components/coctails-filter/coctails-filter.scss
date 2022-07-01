@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+
+.cocktails-filter {
+	z-index: 2;
+	position: fixed;
+	top: 112px;
+	width: 48rem;
+	width: 100%;
+
+	background: $mainBackgroundColor;
+	padding-bottom: 6rem;
+
+	&__scroll {
+		max-width: calc(48rem - 6rem - 6rem);
+		display: flex;
+		justify-content: space-between;
+		overflow-x: scroll;
+
+		@media screen and (min-width: 425px) {
+			max-width: 48rem;
+		}
+	}
+
+	&__button {
+		padding: 1rem 2rem;
+		font-weight: 300;
+		font-size: 2.25rem;
+		background-color: transparent;
+		color: $buttonTextColor;
+		display: inline-block;
+		&:active {
+			background-color: transparent;
+		}
+
+		&_selected {
+			color: $textColor;
+			font-weight: 300;
+			font-size: 2.25rem;
+			padding: 1rem 2rem;
+			background-color: transparent;
+			border: 1px solid #c4c1cf;
+			border-radius: 4rem;
+		}
+	}
+}
