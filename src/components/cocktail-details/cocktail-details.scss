@@ -1,0 +1,21 @@
+@import '../../styles/variables.scss' ;
+
+.cocktails-details{
+    &__info{
+        padding: 4rem;
+    }
+
+    &__back-button{
+        background-color: $backButtonColor;
+        padding-top: 2.5rem;
+        padding-left: 3rem;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 2rem;
+        position: fixed;
+        top: 4rem;
+        left: 4rem;
+    }
+}
+
+

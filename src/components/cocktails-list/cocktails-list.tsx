@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { CocktailCard } from "../cocktail-card/cocktail-card";
 import { CocktailsFilter } from "../coctails-filter/coctails-filter";
 
@@ -35,12 +36,19 @@ const mockCoctails = [
 ];
 
 export const CocktailsList = () => {
+	const navigate = useNavigate();
 	return (
 		<>
 			<CocktailsFilter />
 			<div className="cocktails-list">
 				{mockCoctails.map((cocktail) => (
-					<CocktailCard key={cocktail.id} cocktail={cocktail} />
+					<CocktailCard
+						key={cocktail.id}
+						cocktail={cocktail}
+						onClick={() => {
+							navigate("cocktails-details");
+						}}
+					/>
 				))}
 			</div>
 		</>
