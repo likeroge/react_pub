@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 
 export interface ICocktail {
 	id: number;
@@ -11,4 +11,5 @@ export interface ICocktail {
 export interface ICocktailCardProps {
 	key: React.Key;
 	cocktail: ICocktail;
+	onClick: MouseEventHandler<HTMLDivElement>
 }

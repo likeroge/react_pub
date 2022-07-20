@@ -2,9 +2,9 @@ import { FC } from "react";
 import "./cocktail-card.scss";
 import { ICocktailCardProps } from "./types";
 
-export const CocktailCard: FC<ICocktailCardProps> = ({ cocktail }) => {
+export const CocktailCard: FC<ICocktailCardProps> = ({ cocktail, onClick }) => {
 	return (
-		<div className="coctail-card">
+		<div className="coctail-card" onClick={onClick}>
 			<img
 				className="coctail-card__image"
 				src={require("../../assets/images/cocktail1.jpg")}
