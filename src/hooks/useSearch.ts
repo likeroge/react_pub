@@ -8,8 +8,8 @@ export const useSearch = (searchString:string, cocktails:ICocktail[]) => {
             setSearchResults([])
         }else{
             const newResults = cocktails.filter(cocktail=> {
-                if( cocktail.title.match(searchString)!==null) {
-                 return cocktail.title.match(searchString)?.input
+                if( cocktail.title.toLowerCase().match(searchString.toLowerCase())!==null) {
+                 return cocktail.title.toLowerCase().match(searchString.toLowerCase())?.input
                 }
              })
             setSearchResults(newResults)
