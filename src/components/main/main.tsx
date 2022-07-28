@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import "./main.scss";
+import "./Main.scss";
 
 export const Main = (props: PropsWithChildren) => {
 	return (

@@ -1,6 +1,6 @@
 import { FC } from "react";
-import "./cocktail-card.scss";
-import { ICocktailCardProps } from "./types";
+import "./CocktailCard.scss";
+import { ICocktailCardProps } from "./props";
 
 export const CocktailCard: FC<ICocktailCardProps> = ({ cocktail, onClick }) => {
 	return (

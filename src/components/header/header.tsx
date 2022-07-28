@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
-import { Logo } from "../logo/logo";
-import "./header.scss";
+import { Logo } from "../Logo/Logo";
+import "./Header.scss";
 
 export const Header = () => {
 	const currentDateString = new Date()

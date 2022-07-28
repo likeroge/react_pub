@@ -1,14 +1,17 @@
-import React from "react";
-import { CocktailsList } from "./components/cocktails-list/cocktails-list";
-import { Footer } from "./components/footer/footer";
-import { Header } from "./components/header/header";
-import { Main } from "./components/main/main";
+import React, { useState } from "react";
+import { CocktailsList } from "./components/CocktailsList/CocktailsList";
+import { Footer } from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
+import { Main } from "./components/Main/Main";
 import "./App.scss";
 import { Outlet, Route, Routes } from "react-router-dom";
-import { CocktailDetails } from "./components/cocktail-details/cocktail-details";
-import { SearchResult } from "./components/search-page/search-result";
+import { CocktailDetails } from "./components/CocktailDetails/CocktailDetails";
+import { SearchResult } from "./components/SearchResult/SearchResult";
+import { cocktailsApi } from "./api/cocktails";
+import { ICocktail } from "./models/Cocktail";
 
 function App() {
+	const [searchResults, setSearchResults] = useState<ICocktail[]>([]);
 	return (
 		<div className="app-wrapper">
 			<Routes>
@@ -20,12 +23,12 @@ function App() {
 							<Main>
 								<Outlet />
 							</Main>
-							<Footer />
+							<Footer setSearchResults={setSearchResults} />
 						</>
 					}
 				>
 					<Route index element={<CocktailsList />} />
-					<Route path="search" element={<SearchResult />} />
+					<Route path="search" element={<SearchResult searchResults={searchResults} />} />
 				</Route>
 
 				<Route path="cocktails-details" element={<CocktailDetails />} />
