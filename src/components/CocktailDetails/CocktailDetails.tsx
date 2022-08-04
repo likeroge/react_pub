@@ -1,5 +1,5 @@
 import React from "react";
-import "./cocktail-details.scss";
+import "./CocktailDetails.scss";
 import LeftArrow from "../../assets/images/LeftArrow.png";
 import { useNavigate } from "react-router-dom";
 

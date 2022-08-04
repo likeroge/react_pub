@@ -1,0 +1,27 @@
+.search-result{
+    &__no-result{
+    padding-top: 18rem;
+
+        text-align: center;
+        font-weight: 400;
+        font-size: 3rem;
+    }
+
+    &__cocktails-list{
+            padding-top: 140px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 4rem;
+        
+            @media screen and (min-width: 768px) {
+                grid-template-columns: repeat(2, 2fr);
+            }
+            @media screen and (min-width: 992px) {
+                grid-template-columns: repeat(3, 3fr);
+            }
+            @media screen and (min-width: 1200px) {
+                grid-template-columns: repeat(4, 4fr);
+            }
+        
+    }
+}
