@@ -1,37 +1,42 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import "./Footer.scss";
+import { FC } from "react";
 import searchIcon from "../../assets/icons/searchIcon.png";
-import { useSearch } from "../../hooks/useSearch";
-import { useFetch } from "../../hooks/useFetch";
-import { FC, useState } from "react";
-import { IFooterProps } from "./props";
+import { bem } from "../../config/bem-react";
+import "./Footer.scss";
 
-export const Footer: FC<IFooterProps> = ({ setSearchResults }) => {
-	const navigate = useNavigate();
-	const location = useLocation();
-	const [searchString, setSearchString] = useState<string>("");
-	const cocktails = useFetch("cocktails");
-	const searhResults = useSearch(searchString, cocktails);
+interface FooterProps {
+	isInputVisible: boolean;
+	searchString: string;
+	onSearchButtonHandler: () => void;
+	onChangeInputHandler: (e: any) => void;
+}
 
-	setSearchResults(searhResults);
+export const Footer: FC<FooterProps> = ({
+	isInputVisible,
+	searchString,
+	onSearchButtonHandler,
+	onChangeInputHandler,
+}) => {
+	const footer = bem("footer");
 
 	return (
-		<footer className="footer">
-			<div className="footer__container">
-				{location.pathname === "/search" ? (
-					<div className="footer__search-container">
+		<footer className={footer()}>
+			<div className={footer("container")}>
+				{isInputVisible ? (
+					<div className={footer("search-container")}>
 						<input
-							onChange={(e) => setSearchString(e.target.value)}
+							ref={(element) => element?.focus()}
+							onChange={(e) => onChangeInputHandler(e)}
 							type="text"
-							className="footer__search-input"
+							className={footer("search-input")}
 							value={searchString}
+							onBlur={onSearchButtonHandler}
 						/>
-						<button className="footer__search-button">
+						<button className={footer("search-button")}>
 							<img src={searchIcon} alt="searchIcon" />
 						</button>
 					</div>
 				) : (
-					<button onClick={() => navigate("search")} className="footer__button">
+					<button onClick={onSearchButtonHandler} className={footer("button")}>
 						Поиск
 					</button>
 				)}

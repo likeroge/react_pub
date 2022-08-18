@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { bem } from "../../config/bem-react";
 import { ICocktail } from "../../models/Cocktail";
 import { CocktailCard } from "../CocktailCard/CocktailCard";
 import { ISearchResultsProps } from "./props";
@@ -7,13 +8,14 @@ import "./SearchResult.scss";
 
 export const SearchResult: FC<ISearchResultsProps> = ({ searchResults }) => {
 	const navigate = useNavigate();
+	const searchResult = bem("search-result");
 
 	return (
-		<div className="search-result">
+		<div className={searchResult()}>
 			{searchResults.length === 0 ? (
-				<h1 className="search-result__no-result">Нет запроса - нет результатов</h1>
+				<h1 className={searchResult("no-result")}>Нет запроса - нет результатов</h1>
 			) : (
-				<div className="search-result__cocktails-list">
+				<div className={searchResult("cocktails-list")}>
 					{searchResults.map((cocktail: ICocktail) => (
 						<CocktailCard
 							key={cocktail.id}
