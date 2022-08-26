@@ -1,17 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { cocktailsApi } from "../../api/cocktails";
 import { ICocktailState } from "../types";
-import { ICocktail } from "../../models/Cocktail";
 
 export const fetchCocktails = createAsyncThunk("cocktails/", async () => {
 	const { data } = await cocktailsApi.get("cocktails");
 	return data;
 });
-
-// const fetchCockailsFromApi = async () => {
-// 	const { data } = await cocktailsApi.get("cocktails");
-// 	return data;
-// };
 
 const initialState: ICocktailState = {
 	loading: false,

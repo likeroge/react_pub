@@ -1,13 +1,17 @@
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import LeftArrow from "../../assets/images/LeftArrow.png";
 import { bem } from "../../config/bem-react";
-import { useAppSelector } from "../../hooks/redux.hooks";
+import { ICocktail } from "../../models/Cocktail";
 import "./CocktailDetails.scss";
 
-export const CocktailDetails = () => {
+interface ICocktailDetailsProps {
+	selectedCocktail: ICocktail | null;
+}
+
+export const CocktailDetails: FC<ICocktailDetailsProps> = ({ selectedCocktail }) => {
 	const navigate = useNavigate();
 	const cocktailsDetails = bem("cocktails-details");
-	const selectedCocktail = useAppSelector((state) => state.cocktails.selectedCocktail);
 
 	return (
 		<div className={cocktailsDetails()}>

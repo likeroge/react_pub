@@ -1,33 +1,15 @@
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.scss";
-import { CocktailDetails } from "./components/CocktailDetails/CocktailDetails";
-import { CocktailsListContainer } from "./components/CocktailsList/CocktailsListContainer";
-import { FooterContainer } from "./components/Footer/FooterContainer";
-import { Header } from "./components/Header/Header";
-import { HeaderContainer } from "./components/Header/HeaderContainer";
-import { Main } from "./components/Main/Main";
+import { CocktailDetailsContainer } from "./components/CocktailDetails/CocktailDetailsContainer";
+import { HomePage } from "./pages/HomePage/HomePage";
 
 function App() {
 	return (
 		<div className="app-wrapper">
 			<Routes>
-				<Route
-					path=""
-					element={
-						<>
-							<HeaderContainer />
-							<Main>
-								<Outlet />
-							</Main>
-							<FooterContainer />
-						</>
-					}
-				>
-					<Route index element={<CocktailsListContainer />} />
-					{/* <Route path="search" element={<SearchResult searchResults={searchResults} />} /> */}
-				</Route>
+				<Route path="" element={<HomePage />} />
 
-				<Route path="cocktails-details" element={<CocktailDetails />} />
+				<Route path="cocktails-details/:id" element={<CocktailDetailsContainer />} />
 			</Routes>
 		</div>
 	);

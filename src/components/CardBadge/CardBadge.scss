@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.badge {
+	z-index: 1;
+	border-radius: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $badgeColor;
+	width: 10rem;
+	height: 10rem;
+
+	&__title {
+		font-weight: 700;
+		font-size: 3rem;
+	}
+	&__subtitle {
+		font-weight: 300;
+		font-size: 14px;
+	}
+}

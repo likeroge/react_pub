@@ -4,17 +4,16 @@ import { Logo } from "../Logo/Logo";
 import "./Header.scss";
 
 interface HeaderProps {
-	headerTitle: string;
 	currentDateString: string;
 }
 
-export const Header: FC<HeaderProps> = ({ currentDateString, headerTitle }) => {
+export const Header: FC<HeaderProps> = ({ currentDateString }) => {
 	const header = bem("header");
 
 	return (
 		<header className={header()}>
 			<div className={header("container")}>
-				<h1 className={header("title")}>{headerTitle}</h1>
+				<h1 className={header("title")}>Главная</h1>
 				<h2 className={header("subtitle")}>{currentDateString}</h2>
 			</div>
 			<Logo />

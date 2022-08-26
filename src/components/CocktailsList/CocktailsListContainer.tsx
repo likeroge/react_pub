@@ -14,18 +14,19 @@ export const CocktailsListContainer = () => {
 	const dispatch = useAppDispatch();
 	const cocktailState = useAppSelector((state) => state.cocktails);
 	const coctails = cocktailState.cocktails;
+	const cocktailsLoadingError = cocktailState.error;
+	const cocktailsLoading = cocktailState.loading;
 
 	const onSelectCocktailHandler = (cocktail: ICocktail) => {
-		dispatch(setSelectedCocktail(cocktail));
-		navigate("cocktails-details");
+		// dispatch(setSelectedCocktail(cocktail));
+		navigate(`cocktails-details/${cocktail.id}`);
 	};
 
 	useEffect(() => {
-		if (coctails.length !== 0) {
-			return;
+		if (coctails.length === 0) {
+			dispatch(fetchCocktails());
 		}
-		dispatch(fetchCocktails());
-	}, [coctails]);
+	}, []);
 
 	const searchStringFromRedux = cocktailState.searchString;
 
@@ -38,6 +39,8 @@ export const CocktailsListContainer = () => {
 			onSelectCocktailHandler={onSelectCocktailHandler}
 			setCocktailsCategory={setCategory}
 			filteredCocktails={cocktailSearchResult}
+			cocktailsLoadingError={cocktailsLoadingError}
+			cocktailsLoading={cocktailsLoading}
 		/>
 	);
 };

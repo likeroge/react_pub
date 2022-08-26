@@ -16,5 +16,8 @@ export const useSearch = (cocktails: ICocktail[], searchString: string) => {
 			setSearchResults(newResults);
 		}
 	}, [cocktails, searchString]);
+	if (cocktails.length === 0) {
+		return null;
+	}
 	return searchResults;
 };
