@@ -1,33 +1,20 @@
-import { useLocation } from "react-router-dom";
+import { FC } from "react";
+import { bem } from "../../config/bem-react";
 import { Logo } from "../Logo/Logo";
 import "./Header.scss";
 
-export const Header = () => {
-	const currentDateString = new Date()
-		.toLocaleDateString("nu", {
-			dateStyle: "long",
-		})
-		.slice(0, 12);
+interface HeaderProps {
+	currentDateString: string;
+}
 
-	const currentPath = useLocation().pathname;
-	let headerTitle = "";
-
-	switch (currentPath) {
-		case "/":
-			headerTitle = "Главная";
-			break;
-		case "/search":
-			headerTitle = "Поиск";
-			break;
-		default:
-			break;
-	}
+export const Header: FC<HeaderProps> = ({ currentDateString }) => {
+	const header = bem("header");
 
 	return (
-		<header className="header">
-			<div className="header__container">
-				<h1 className="header__title">{headerTitle}</h1>
-				<h2 className="header__subtitle">{currentDateString}</h2>
+		<header className={header()}>
+			<div className={header("container")}>
+				<h1 className={header("title")}>Главная</h1>
+				<h2 className={header("subtitle")}>{currentDateString}</h2>
 			</div>
 			<Logo />
 		</header>

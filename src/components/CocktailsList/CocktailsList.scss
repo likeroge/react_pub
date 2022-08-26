@@ -13,4 +13,9 @@
 	@media screen and (min-width: 1200px) {
 		grid-template-columns: repeat(4, 4fr);
 	}
+	&__error {
+		padding-top: 210px;
+		text-align: center;
+		font-size: 4rem;
+	}
 }

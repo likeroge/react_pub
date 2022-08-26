@@ -1,4 +1,5 @@
-import { Dispatch, FC, SetStateAction, useState } from "react";
+import { FC, useState } from "react";
+import { bem } from "../../config/bem-react";
 import "./CoctailsFilter.scss";
 import { ICocktailsListProps, IFilterCategory } from "./props";
 
@@ -35,17 +36,18 @@ export const CocktailsFilter: FC<ICocktailsListProps> = ({ setCocktailsCategory 
 		setActiveCategory(filter.categoryId);
 		setCocktailsCategory(filter.categoryId);
 	};
+	const cocktailsFilter = bem("cocktails-filter");
 	return (
-		<div className="cocktails-filter">
-			<div className="cocktails-filter__scroll">
+		<div className={cocktailsFilter()}>
+			<div className={cocktailsFilter("scroll")}>
 				{filters.map((filter, idx) => (
 					<button
 						key={idx}
 						onFocus={() => onSetCocktailsCategory(filter)}
 						className={
 							activeCategory === filter.categoryId
-								? "cocktails-filter__button cocktails-filter__button_selected"
-								: "cocktails-filter__button"
+								? cocktailsFilter("button", { selected: true })
+								: cocktailsFilter("button")
 						}
 					>
 						{filter.title}
